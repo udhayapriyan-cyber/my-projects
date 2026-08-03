@@ -10,7 +10,11 @@ function addExpense() {
     }
 
     const li = document.createElement("li");
-    li.textContent = `${name} - ₹${amount}`;
+
+    li.innerHTML = `
+        ${name} - ₹${amount}
+        <button onclick="deleteExpense(this, ${amount})">Delete</button>
+    `;
 
     document.getElementById("expenseList").appendChild(li);
 
@@ -19,4 +23,11 @@ function addExpense() {
 
     document.getElementById("expenseName").value = "";
     document.getElementById("expenseAmount").value = "";
+}
+
+function deleteExpense(button, amount) {
+    button.parentElement.remove();
+
+    total -= amount;
+    document.getElementById("total").textContent = total;
 }

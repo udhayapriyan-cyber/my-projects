@@ -16,3 +16,22 @@ button {
 li {
     margin: 10px 0;
 }
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+li button {
+    width: auto;
+    background: red;
+    padding: 8px 12px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+li button:hover {
+    background: darkred;
+}
